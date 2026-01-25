@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 from flask import request
+
 app = Flask(__name__)
 
 todos = [
@@ -9,7 +10,7 @@ todos = [
 
 @app.route('/todos', methods=['GET'])
 def hello_world():
-    return jsonify(todos)
+    return jsonify(todos), 200
 
 @app.route('/todos', methods=['POST'])
 def add_new_todo():
